@@ -119,8 +119,8 @@ include ld.so.conf.d/*.conf
 /usr/local/openssl3.2/lib64
 ```  
 
-加载生效：  
-`[root@localhost ~]# ldconfig`  
+更新动态链接库数据并重新加载：  
+`[root@localhost ~]# ldconfig -v`  
 
 做软连接：  
 
