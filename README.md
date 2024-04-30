@@ -5,7 +5,7 @@
 yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel gdbm-devel db4-devel libpcap-devel xz-devel make
 yum install zlib* -y
-yum install -y gcc gcc-c++ python-devel wget
+yum install -y gcc gcc-c++ python-devel autoconf wget
 yum install -y zlib zlib-dev openssl-devel sqlite-devel bzip2-devel libffi libffi-devel gcc gcc-c++
 ```
 
