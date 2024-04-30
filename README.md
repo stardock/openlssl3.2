@@ -11,17 +11,17 @@
 ```
 [root@localhost ~]# tar -xvzf openssl-3.2.1.tar.gz
 [root@localhost ~]# cd openssl-3.2.1/
-[root@localhost openssl-3.1.0]# ./config --prefix=/usr/local/openssl3.2
+[root@localhost openssl-3.2.1]# ./config --prefix=/usr/local/openssl3.2
 ```  
 
 ** 如果报错为: 缺少IPC/Cmd.pm模块  
 
 ```
-[root@localhost openssl-3.1.0]# ./config  --prefix=/usr/local/openssl
-Can't locate IPC/Cmd.pm in @INC (@INC contains: /root/Downloads/openssl-3.1.0/util/perl /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 . /root/Downloads/openssl-3.1.0/external/perl/Text-Template-1.56/lib) at /root/Downloads/openssl-3.1.0/util/perl/OpenSSL/config.pm line 18.
-BEGIN failed--compilation aborted at /root/Downloads/openssl-3.1.0/util/perl/OpenSSL/config.pm line 18.
-Compilation failed in require at /root/Downloads/openssl-3.1.0/Configure line 23.
-BEGIN failed--compilation aborted at /root/Downloads/openssl-3.1.0/Configure line 23.
+[root@localhost openssl-3.2.1]# ./config  --prefix=/usr/local/openssl
+Can't locate IPC/Cmd.pm in @INC (@INC contains: /root/Downloads/openssl-3.2.1/util/perl /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 . /root/Downloads/openssl-3.2.1/external/perl/Text-Template-1.56/lib) at /root/Downloads/openssl-3.2.1/util/perl/OpenSSL/config.pm line 18.
+BEGIN failed--compilation aborted at /root/Downloads/openssl-3.2.1/util/perl/OpenSSL/config.pm line 18.
+Compilation failed in require at /root/Downloads/openssl-3.2.1/Configure line 23.
+BEGIN failed--compilation aborted at /root/Downloads/openssl-3.2.1/Configure line 23.
 ```  
 
 ** 解决方法：  
@@ -35,8 +35,8 @@ cpan[1]> install IPC/Cmd.pm
 ** 具体步骤为下：  
 
 ```
-[root@localhost openssl-3.1.0]# yum install -y perl-CPAN
-[root@localhost openssl-3.1.0]# perl -MCPAN -e shell
+[root@localhost openssl-3.2.1]# yum install -y perl-CPAN
+[root@localhost openssl-3.2.1]# perl -MCPAN -e shell
 CPAN.pm requires configuration, but most of it can be done automatically.
 If you answer 'no' below, you will enter an interactive dialog for each
 configuration option instead.
@@ -97,9 +97,9 @@ Could not read metadata file. Falling back to other methods to determine prerequ
 ## 重新编译配置：  
 
 ```
-[root@localhost openssl-3.1.0]# ./config  --prefix=/usr/local/openssl3.2
-[root@localhost openssl-3.1.0]# make -j 4
-[root@localhost openssl-3.1.0]# make install
+[root@localhost openssl-3.2.1]# ./config  --prefix=/usr/local/openssl3.2
+[root@localhost openssl-3.2.1]# make -j 4
+[root@localhost openssl-3.2.1]# make install
 ```  
 
 libssl.so.3文件在/usr/local/openssl3.2/lib64目录下面，需要配置到共享库中：  
