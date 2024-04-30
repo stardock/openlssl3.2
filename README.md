@@ -1,5 +1,14 @@
 # CentOS7编译安装OpenSSL3.2  
 
+## 安装对应的依赖库  
+```
+yum -y groupinstall "Development tools"
+yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-devel gdbm-devel db4-devel libpcap-devel xz-devel make
+yum install zlib* -y
+yum install -y gcc gcc-c++ python-devel wget
+yum install -y zlib zlib-dev openssl-devel sqlite-devel bzip2-devel libffi libffi-devel gcc gcc-c++
+```
+
 ## 下载Openssl源码包  
 
 ```
