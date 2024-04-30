@@ -14,7 +14,7 @@
 [root@localhost openssl-3.2.1]# ./config --prefix=/usr/local/openssl3.2
 ```  
 
-** 如果报错为: 缺少IPC/Cmd.pm模块  
+* 如果报错为: 缺少IPC/Cmd.pm模块  
 
 ```
 [root@localhost openssl-3.2.1]# ./config  --prefix=/usr/local/openssl
@@ -24,7 +24,7 @@ Compilation failed in require at /root/Downloads/openssl-3.2.1/Configure line 23
 BEGIN failed--compilation aborted at /root/Downloads/openssl-3.2.1/Configure line 23.
 ```  
 
-** 解决方法：  
+* 解决方法：  
 
 ```
 yum install -y perl-CPAN
@@ -32,7 +32,7 @@ perl -MCPAN -e shell
 cpan[1]> install IPC/Cmd.pm 
 ```
 
-** 具体步骤为下：  
+* 具体步骤为下：  
 
 ```
 [root@localhost openssl-3.2.1]# yum install -y perl-CPAN
@@ -55,7 +55,7 @@ resolve this problem manually if you need to customize your setup.
 What approach do you want?  (Choose 'local::lib', 'sudo' or 'manual')
 ```  
 
-安装缺省的包：  
+* 安装缺省的包：  
 ```
  cpan[1]> install IPC/Cmd.pm 
 ..............................................................DONE
